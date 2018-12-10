@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { /* вся страница */
+	background-color: #B8B79C;
+}
+
+.main { /* главный блок */
+	font-family: "Comic Sans MS", cursive;
+	font-size: 20px;	
+	background-color: #999;
+	min-height: 5000px;
+}
+
+p { /*абзац*/
+	margin:20px;
+}
+
+.left { /* левая колонка */
+	background-color: #CCC ;
+	border-right: 2 px, solid #424242;
+	min-height: 5000px;
+}
+
+
+p.title { /* ради слова навигация */
+background-color: #A72E37;
+color: #ffffff;
+font-weight:bold;
+margin:5px;
+padding:5px;
+}
+
+.menu{ /*весь блок меню*/
+border: 1px solid gray; 
+border-bottom-width: 1px;
+width: 180px; 
+background-color: #f6f6f6;  
+margin:8px; 
+}
+
+.menu>a{ /* ячейка */
+margin: 10px;
+border: 1px solid gray;
+font: bold 13px Verdana; 
+padding: 2px;
+padding-left: 4px;
+display: block;
+width: 130px; 
+color: #000000;  
+text-decoration: none; 
+border-bottom: 1px solid gray;
+}
+
+#coolmenu a:hover{ /* при наведении курсора */
+background-color: #cccccc; 
+color: #000000;  
+}

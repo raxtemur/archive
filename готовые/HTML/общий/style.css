@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #CCCCCC;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+
+
+header {
+	background-color: #ADB96E;
+}
+
+body {
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+.content {
+	float: right;
+	width: 94%;
+	min-height: 2000px;
+	background-color: #333;
+	color: #FFF
+}
+
+footer {
+	clear:both;
+	padding: 10px 0;
+	background-color: #FFFFFF;
+}
+
+.sidebar1 {
+	min-width: 50px;
+	float: left;
+	display: block;
+	width: 5%;
+	background-color: #EADCAE;
+}
+
+.sidebar1 ul { /* без лишних отступов*/
+	 margin-left: 0; 
+    padding-left: 0;
+}
+
+.sidebar1 li {
+	width: 40px;
+	height: 40px;
+	list-style-type: none;
+	display: block;
+	border:1px solid #ddd;
+	margin-bottom:20px;
+    margin-left:5px;
+	margin-right: 5px;
+    border-radius:10px;
+	border-color: #000;
+
+}
+
+/* ~~ Оформление ссылок на вашем сайте должно оставаться в этом порядке, включая группу селекторов, создающих эффект наведения. ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* если только ссылки не должны выглядеть исключительно своеобразно, то для быстрого зрительного распознавания рекомендуется использовать подчеркивание */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* эта группа селекторов обеспечивает пользователю, работающему с клавиатурой, такие же возможности наведения, как и при использовании мыши. */
+	text-decoration: none;
+}
+
+
+
+
+
+/* ~~ прочие классы float/clear ~~ */
+.txtR {  /* этот класс можно использовать для обтекания элемента справа на странице. Обтекаемый элемент должен предшествовать элементу, с которым он должен находиться рядом на странице. */
+	float: right;
+	margin-left: 8px;
+}
+.txtL { /* этот класс можно использовать для обтекания элемента слева на странице. Обтекаемый элемент должен предшествовать элементу, с которым он должен находиться рядом на странице. */
+	float: left;
+	margin-right: 8px;
+}
+
+

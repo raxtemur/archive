@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.222,=C:\Users\Temur\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.962,=C:\Users\Temur\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2015.09.25 06:10:49.676,=C:\Users\Temur\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2015.09.25 06:10:49.681,=C:\Users\Temur\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2015.09.25 06:28:25.637,C:\Темур\programming\готовые\C++\Snake\Main.cpp=C:\Users\Temur\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2015.09.25 06:28:38.337,=C:\Users\Temur\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2015.09.25 06:53:01.557,C:\Темур\programming\готовые\C++\Snake\Point.cpp=C:\Users\Temur\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2015.09.25 06:53:07.073,C:\Темур\programming\готовые\C++\Snake\Project1PCH1.h=C:\Users\Temur\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2015.09.25 06:53:07.692,C:\Темур\programming\готовые\C++\Snake\Project1.cbproj=C:\Users\Temur\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
