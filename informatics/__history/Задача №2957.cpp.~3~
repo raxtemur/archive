@@ -1,0 +1,13 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+ int main()
+{
+	int n, m;
+	cin>>n>>m;
+	cout<<(n%m)+1;
+	getch();8
+	return 0;
+}

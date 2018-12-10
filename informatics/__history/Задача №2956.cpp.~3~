@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+	int main()
+	{
+		char a=0, b=0, c=0, d=0;
+		int x, y;
+		cin>>a>>b>>c>>d;
+		x=(int)a-48+(int)b-48;
+		y=(int)c-48+(int)d-48;
+		x=(x-y+1);
+		cout<<x;
+		return 0;
+	}

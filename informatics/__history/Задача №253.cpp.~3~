@@ -1,0 +1,19 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+	int main()
+{
+	int year;
+	cin>>year;
+	if (year%4==0) {
+		if ( year%100 ) {
+			if (year%400) {cout<<"YES";}
+			else {cout<<"NO";}
+		}
+		else{cout<<"YES";}
+	}
+	else{ cout<<"NO";}
+	getch();
+	return 0;
+}

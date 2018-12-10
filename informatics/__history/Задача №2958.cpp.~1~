@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+
+ int main()
+{
+	int a, b;
+	cin>>a>>b;
+	cout<<(((a+b) div b-1)*a+((a+b) div a-1)*b) div(a div b+b div a);
+	return 0;
+}

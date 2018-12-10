@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+	int main()
+	{
+		int n,a,b,c;
+		cin>>n;
+		a=n/1000;
+		b=n
+		cout<<(n-9*(n/10)-109*(n/100)-1109*(n/1000)) ;
+		return 0;
+	}
