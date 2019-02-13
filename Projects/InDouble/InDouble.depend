@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1550094139 source:c:\users\user\projects\indouble\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
