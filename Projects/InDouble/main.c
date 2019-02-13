@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
             {
                 mantiss_sign = -1;
             }
-            if (status == 0 && _pow == 0 && pow_sign == 0)
+            else if (status == 2 && _pow == 0 && pow_sign == 0)
             {
                 pow_sign = -1;
             }
@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
             {
                 mantiss_sign = 1;
             }
-            if (status == 0 && _pow == 0 && pow_sign == 0)
+            else if (status == 2 && _pow == 0 && pow_sign == 0)
             {
                 pow_sign = 1;
             }
