@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1550679832 source:c:\users\user\documents\github\archive\projects\nm solving equations\main.c
+	<stdio.h>
+	<math.h>
+
