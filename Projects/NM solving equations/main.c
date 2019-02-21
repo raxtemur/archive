@@ -7,11 +7,11 @@ typedef double(*function)(double x); // задание типа function
 
 double fx(double x)
 {
-    return x*x-17;
+    return x*x*x-5*x;
 } // вычисляемая функция
 double dfx(double x)
 {
-    return 2*x;
+    return 3*x*x-5;
 } // производная функции
 
 double solveBisection(function fx, double x0, double x1)
@@ -22,6 +22,11 @@ double solveBisection(function fx, double x0, double x1)
         x2 = x1/2 + x0/2;
         if (fx(x2)*fx(x0) > 0) x0 = x2;
         if (fx(x2)*fx(x1) > 0) x1 = x2;
+        if (fx(x2) == 0)
+            {
+                x1 = x2;
+                x0 = x2;
+            }
     }
     return x1;
 }
@@ -62,10 +67,10 @@ double solveNewton(function fx, function dfx, double x0)
 
 int main ()
 {
-    printf("%f\n",solveBisection(fx, 4, 5));
-    printf("%f\n",solveSecant(fx, 4, 5));
-    printf("%f\n",solveNewton(fx, dfx, 4));
-    printf("%f\n",solveChord(fx, 4, 5));
+    printf("%f\n",solveBisection(fx, -10, 50));
+    printf("%f\n",solveSecant(fx, -10, 50));
+    printf("%f\n",solveNewton(fx, dfx, 10));
+    printf("%f\n",solveChord(fx, -10, 10));
 
 
     return 0;
