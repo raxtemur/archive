@@ -129,6 +129,34 @@ int Integral_Simpson(function fx, double a, double b, double eps, unsigned long 
     return 1;
 }
 
+int Integral_Gauss(function fx, double a, double b, double eps, unsigned long long steps, double *ans)//m = 2
+{
+    double h, sum = 0;
+    double x, x1, x2, f1, f2;
+    if (steps == 0)
+    {
+        if(!countSteps(Integral_Gauss, fx, a, b, 2, eps, &steps))
+        {
+            printf("internal error\n");
+            return(0);
+        }
+
+    }
+    h = (b - a)/steps;
+    x = a;
+    for(int i = 0; i < steps; i++)
+    {
+        x1 = (x + h/2) - (h/(2*sqrt(3)));
+        x2 = (x + h/2) + (h/(2*sqrt(3)));
+        fx(x1, &f1);
+        fx(x2, &f2);
+        sum += (f1 + f2)*(h/2);
+
+    }
+    *ans = sum;
+    return 1;
+}
+
 int main()
 {
     double a = 8, b = 11, eps = 0.0001, ans;
@@ -138,5 +166,7 @@ int main()
     Integral_Trapezoidal(fx, a, b, eps, 0, &ans);
     printf("%.*lf\n", NumOfSign, ans);
     Integral_Simpson(fx, a, b, eps, 0, &ans);
+    printf("%.*lf\n", NumOfSign, ans);
+    Integral_Gauss(fx, a, b, eps, 0, &ans);
     printf("%.*lf\n", NumOfSign, ans);
 }
