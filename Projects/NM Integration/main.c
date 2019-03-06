@@ -38,13 +38,11 @@ int countSteps(integral I, function fx, double a, double b, int m, double eps, u
         printf("internal error\n");
         return(0);
     }
-    eps0 = (I1 - I0)/(pow(2, m + 1));
+    eps0 = (I1 - I0)/(pow(2, m + 1) - 1);
     if (eps0 > eps)
     {
         h = h*pow(eps/eps0, 1.0/(m + 1));
-        h = fabs((b - a) / h);
-        Im = ceil(h);
-        *ans = Im;
+        *ans = ceil(fabs((b - a) / h));
     }
     else
     {
@@ -135,7 +133,6 @@ int main()
 {
     double a = 8, b = 11, eps = 0.0001, ans;
     int NumOfSign = ceil(-log(eps)/log(10) + 1);
-    eps = eps/(b - a);
     Integral_midPoint(fx, a, b, eps, 0, &ans);
     printf("%.*lf\n", NumOfSign, ans);
     Integral_Trapezoidal(fx, a, b, eps, 0, &ans);
