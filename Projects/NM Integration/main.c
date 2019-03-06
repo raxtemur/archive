@@ -151,6 +151,7 @@ int Integral_Gauss(function fx, double a, double b, double eps, unsigned long lo
         fx(x1, &f1);
         fx(x2, &f2);
         sum += (f1 + f2)*(h/2);
+        x += h;
 
     }
     *ans = sum;
@@ -159,7 +160,7 @@ int Integral_Gauss(function fx, double a, double b, double eps, unsigned long lo
 
 int main()
 {
-    double a = 8, b = 11, eps = 0.0001, ans;
+    double a = 0, b = 1, eps = 0.0001, ans;
     int NumOfSign = ceil(-log(eps)/log(10) + 1);
     Integral_midPoint(fx, a, b, eps, 0, &ans);
     printf("%.*lf\n", NumOfSign, ans);
