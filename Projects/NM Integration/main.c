@@ -13,7 +13,7 @@ int Integral_midPoint(function fx, double a, double b, double eps, unsigned long
 
 int fx(double x, double *ans)
 {
-    *ans = x;
+    *ans = x*x;
     return 1;
 }
 
@@ -28,7 +28,6 @@ int countSteps(integral I, function fx, double a, double b, int m, double eps, u
         printf("internal error\n");
         return(0);
     }
-    eps = eps / 10;
     if(!Integral_midPoint(fx, a, b, eps, 16, &I0))
     {
         printf("internal error\n");
@@ -68,14 +67,14 @@ int Integral_midPoint(function fx, double a, double b, double eps, unsigned long
 
     }
     h = (b - a)/steps;
-    x = (a + h)/2;
+    x = a;
     for(int i = 0; i < steps; i++)
     {
-        fx(x, &f);
-        sum += h*f;
+        fx((x + h/2), &f);
+        sum += f;
         x = x + h;
     }
-    *ans = sum;
+    *ans = sum*h;
     return 1;
 }
 
@@ -134,8 +133,9 @@ int Integral_Simpson(function fx, double a, double b, double eps, unsigned long 
 
 int main()
 {
-    double a = 1, b = 5, eps = 0.001, ans;
+    double a = 8, b = 11, eps = 0.0001, ans;
     int NumOfSign = ceil(-log(eps)/log(10) + 1);
+    eps = eps/(b - a);
     Integral_midPoint(fx, a, b, eps, 0, &ans);
     printf("%.*lf\n", NumOfSign, ans);
     Integral_Trapezoidal(fx, a, b, eps, 0, &ans);
