@@ -10,10 +10,17 @@ typedef int(*integral)(function fx, double a, double b, double eps, unsigned lon
 int countSteps(integral I, function fx, double a, double b, int m, double eps, unsigned long long *ans);
 int Integral_midPoint(function fx, double a, double b, double eps, unsigned long long steps, double *ans);//m = 1, p = 2;
 
+int f(double x, double *ans)
+{
+    *ans = sin(x)/x;
+    return 1;
+}
 
 int fx(double x, double *ans)
 {
-    *ans = x*x;
+    double an;
+    Integral_midPoint(f, 0, x, EPS, 0, &an);
+    *ans = an;
     return 1;
 }
 
@@ -158,9 +165,19 @@ int Integral_Gauss(function fx, double a, double b, double eps, unsigned long lo
     return 1;
 }
 
+int Integral_Runge_Cutta(function fx, double a, double b, double eps, unsigned long long steps, double *ans)//m = 2
+{
+    double I1, I2, I4;
+    Integral_midPoint(fx, a, b, eps, 4*steps, &I1);
+    Integral_midPoint(fx, a, b, eps, 8*steps, &I2);
+    Integral_midPoint(fx, a, b, eps, 16*steps, &I4);
+    *ans = (I4*I1 - I2*I2)/(I1+I4 -2*I2);
+    return 1;
+}
+
 int main()
 {
-    double a = 0, b = 1, eps = 0.0001, ans;
+    double a = 0, b = 10000, eps = 0.001, ans;
     int NumOfSign = ceil(-log(eps)/log(10) + 1);
     Integral_midPoint(fx, a, b, eps, 0, &ans);
     printf("%.*lf\n", NumOfSign, ans);
@@ -169,5 +186,7 @@ int main()
     Integral_Simpson(fx, a, b, eps, 0, &ans);
     printf("%.*lf\n", NumOfSign, ans);
     Integral_Gauss(fx, a, b, eps, 0, &ans);
+    printf("%.*lf\n", NumOfSign, ans);
+    Integral_Runge_Cutta(fx, a, b, eps, 32, &ans);
     printf("%.*lf\n", NumOfSign, ans);
 }
