@@ -17,13 +17,24 @@ int strdel(char **str, char *itL, char *itR)
 int main(int argc, char* argv[])
 {
     char *br1, *br2, *str;
+    FILE *fin;
     char *str_new;
     char *itL, *buf, *it1, *it2;
-    int flag = 0;
+    int flag = 0, len;
     if (argc != 4) printf("Error: Not correct arguments");
+    fin = fopen (argv[3], "r");
+    if(!fin)
+    {
+        printf ("Error: cannot open input file!\n");
+        return(-1);
+    }
+    for(len = 0; getc(fin) != EOF; len++);
+    rewind (fin);
+    str = malloc(len*sizeof(char));
+    //str = malloc(filelength(fileno(fin))*sizeof(char));
+    fscanf(fin, "%s", str);
     br1 = argv[1];
     br2 = argv[2];
-    str = argv[3];
     itL = strstr(str, br1);
     while(itL != NULL)
     {
